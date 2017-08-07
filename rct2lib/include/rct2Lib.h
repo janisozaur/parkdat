@@ -1,1 +1,1 @@
-#include "..\rct2Lib\rct2lib.h"
+#include "..\rct2lib.h"

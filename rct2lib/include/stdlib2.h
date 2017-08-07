@@ -14,7 +14,7 @@ int range(int n, int low, int high);
 int sign(int n);
 int inrange(int n, int l, int h);
 int memswap(char * addr1, char * addr2, int bytes);
-int round(int a, int unitSize);
+int round2(int a, int unitSize);
 int GetToken(char * retBuff, int p, const char * str, const char * delim, DWORD retBuff_MaxLength);
 int GetToken2(char * retBuff, int p, const char * str, const char * delim, DWORD retBuff_MaxLength);
 char * strtok_ci(char * strToken, const char * delims);

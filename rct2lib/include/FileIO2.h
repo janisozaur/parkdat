@@ -50,8 +50,8 @@ typedef struct FILENAME
     int __cdecl Format(const char * format, ...);
     FILENAME Make_DlgGetFileName_Filter(char * desc, char * mask);
     FILENAME Make_DlgGetFileName_Filter(FILENAME, FILENAME);
-    ToWideChar();
-    FromWideChar();
+    int ToWideChar();
+    int FromWideChar();
     bool IsSlashChar(short ch);
     int BrowseForDirectory(char * startPath);
     char operator[](int index);

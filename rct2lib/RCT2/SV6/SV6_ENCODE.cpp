@@ -1,4 +1,4 @@
-
+#include "..\..\StdAfx.h"
 #include <FileIO2.h>
 #include <codeshortcuts.h>
 #include <stdlib2.h>
@@ -91,7 +91,7 @@ DoEncodeSv6:
     return fileLength;
 }
 
-SaveSv6(SV6_FILE * sv6, char * sv6FileName)
+void SaveSv6(SV6_FILE * sv6, char * sv6FileName)
 {
 
     int    sv6CompressedSize;

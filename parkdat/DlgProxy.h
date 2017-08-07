@@ -17,7 +17,7 @@ class CParkDatDlgAutoProxy : public CCmdTarget
 {
     DECLARE_DYNCREATE(CParkDatDlgAutoProxy)
 
-    CParkDatDlgAutoProxy(); // protected constructor used by dynamic creation
+    int CParkDatDlgAutoProxy(); // protected constructor used by dynamic creation
 
     // Attributes
 public:

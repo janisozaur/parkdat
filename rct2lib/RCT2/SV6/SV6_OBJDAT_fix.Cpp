@@ -1,3 +1,4 @@
+#include "../../StdAfx.h"
 #include <FileIO2.h>
 #include <stdlib2.h>
 #include <windows.h>
@@ -58,7 +59,7 @@ typedef struct
 
 #define RCT2_DWORD_EMPTY ((DWORD)(0xFFFFFFFF))
 
-FixObjects(SV6_OBJDAT_HEADER_BLOCK * sv6ObjBlock)
+void FixObjects(SV6_OBJDAT_HEADER_BLOCK * sv6ObjBlock)
 {
     // Init object table based off datnames
     int i, j, fh, bytesRead;

@@ -18,7 +18,7 @@ class ReportCtrl : public CListCtrl
 public:
     ReportCtrl();
 
-    SwapItems(LVITEM & a, LVITEM & b);
+    void SwapItems(LVITEM & a, LVITEM & b);
     // Attributes
 public:
     // Operations
@@ -32,7 +32,7 @@ public:
 public:
     virtual ~ReportCtrl();
 
-    SortItems(int col, int order);
+    void SortItems(int col, int order);
     // Generated message map functions
 protected:
     //{{AFX_MSG(ReportCtrl)

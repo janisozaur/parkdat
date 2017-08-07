@@ -21,9 +21,6 @@
     <ClCompile Include="iso.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="objDat_CopyImage.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="rct2Lib.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -33,8 +30,65 @@
     <ClCompile Include="StdAfx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="include\stddlg.cpp">
-      <Filter>Include</Filter>
+    <ClCompile Include="funcs\rct2Funcs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="funcs\rctFuncs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RCT2\objdat\objDat_AddImage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RCT2\objdat\objDat_AddImage_ClearImage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RCT2\objdat\objdat_all.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RCT2\objdat\objDat_CopyImage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RCT2\objdat\objDat_Image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RCT2\objdat\objdat_LargeScenery.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RCT2\SV6\SV6.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RCT2\SV6\SV6_DECODE.Cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RCT2\SV6\SV6_ENCODE.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RCT2\SV6\SV6_EXTRACTOBJS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RCT2\SV6\SV6_FIXOBJECTS.CPP">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RCT2\SV6\sv6_genNew.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RCT2\SV6\sv6_map.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RCT2\SV6\SV6_OBJDAT.Cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RCT2\SV6\SV6_OBJDAT_fix.Cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RCT2\SV6\sv6_rideFeatureTable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RCT2\SV6\SV6_SPRITES.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RCT2\SV6\sv6_terrFuncs.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

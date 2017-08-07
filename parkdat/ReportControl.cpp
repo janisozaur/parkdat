@@ -1,6 +1,7 @@
 // ReportControl.cpp : implementation file
 //
 
+#include "StdAfx.h"
 #include "ParkDat.h"
 #include "ReportControl.h"
 #include "stdafx.h"
@@ -54,7 +55,7 @@ int ReportControl::GetParam(int row)
     return p;
 };
 
-ReportControl::SelectItem(int i)
+void ReportControl::SelectItem(int i)
 {
     EnsureVisible(i, FALSE);
     SetSelectionMark(i);

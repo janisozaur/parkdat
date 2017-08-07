@@ -1,3 +1,4 @@
+#include "../../StdAfx.h"
 #include <FileIO2.h>
 #include <stdlib2.h>
 #include <windows.h>
@@ -846,7 +847,7 @@ SV6_PATH_RCT1_TO_RCT2_MAPSTRUCT pathAddConvertTable[PATH_ADD_CONVERT_TABLE__NUM_
 #define DATEXT ".DAT"
 #define DATHEADER_FILEOFFSET 0
 
-InitObjects()
+void InitObjects()
 {
     // Init object table based off datnames
     int i, j, fh, bytesRead;

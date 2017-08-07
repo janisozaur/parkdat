@@ -24,8 +24,8 @@ public:
     // functions
 public:
     bool InDrawRange();
-    DrawPreview();
-    FreeAllImgs();
+    void DrawPreview();
+    void FreeAllImgs();
 
     // Construction
 public:

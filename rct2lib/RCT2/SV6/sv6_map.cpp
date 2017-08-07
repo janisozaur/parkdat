@@ -121,7 +121,7 @@ typedef union {
     short t;
 } CONVERT_LAND_TYPE;
 
-dllPort SV6_PARKMAPDATA::GetLandType(short & ground, short & edge)
+dllPort void SV6_PARKMAPDATA::GetLandType(short & ground, short & edge)
 {
     CONVERT_LAND_TYPE
     g, e;
@@ -142,7 +142,7 @@ dllPort SV6_PARKMAPDATA::GetLandType(short & ground, short & edge)
     edge   = e.t;
 }
 
-dllPort SV6_PARKMAPDATA::SetLandType(short ground, short edge)
+dllPort void SV6_PARKMAPDATA::SetLandType(short ground, short edge)
 {
     CONVERT_LAND_TYPE
     g, e;

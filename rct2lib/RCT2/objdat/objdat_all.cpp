@@ -17,7 +17,7 @@ dllPort OBJDAT_FILE::OBJDAT_FILE()
     memset(this, 0, sz(*this));
 }
 
-dllPort OBJDAT_FILE::Init_SetType(int odType)
+dllPort void OBJDAT_FILE::Init_SetType(int odType)
 {
     OBJDATHEADER & ofh = objFileHeader;
     int            i;
@@ -100,7 +100,7 @@ dllPort WORD OBJDAT_FILE::GetNumStringTables()
     };
 }
 
-dllPort OBJDAT_FILE::DecodeObj_Optional_Ride(BYTE * decdChunk, DWORD & i)
+dllPort void OBJDAT_FILE::DecodeObj_Optional_Ride(BYTE * decdChunk, DWORD & i)
 {
     BYTE  numColorSchemes;
     DWORD j, k;
@@ -156,7 +156,7 @@ dllPort OBJDAT_FILE::DecodeObj_Optional_Ride(BYTE * decdChunk, DWORD & i)
 #undef r // optional.ride
 }
 
-OBJDAT_FILE::DecodeObj_Optional_SmScenery(BYTE * decdChunk, DWORD & i)
+void OBJDAT_FILE::DecodeObj_Optional_SmScenery(BYTE * decdChunk, DWORD & i)
 {
     DWORD j;
 
@@ -173,7 +173,7 @@ OBJDAT_FILE::DecodeObj_Optional_SmScenery(BYTE * decdChunk, DWORD & i)
     }
 }
 
-dllPort OBJDAT_FILE::DecodeObj_Optional_LgScenery(BYTE * decdChunk, DWORD & i)
+dllPort void OBJDAT_FILE::DecodeObj_Optional_LgScenery(BYTE * decdChunk, DWORD & i)
 {
 #define ls optional.largeScenery
     DWORD curSz, j;
@@ -202,7 +202,7 @@ dllPort OBJDAT_FILE::DecodeObj_Optional_LgScenery(BYTE * decdChunk, DWORD & i)
 #undef ls // optional.largeScenery
 }
 
-OBJDAT_FILE::DecodeObj_Optional_Group(BYTE * decdChunk, DWORD & i)
+void OBJDAT_FILE::DecodeObj_Optional_Group(BYTE * decdChunk, DWORD & i)
 {
     OBJDATHEADER * g = optional.groupObjs;
 
@@ -221,7 +221,7 @@ OBJDAT_FILE::DecodeObj_Optional_Group(BYTE * decdChunk, DWORD & i)
     }
 }
 
-dllPort OBJDAT_FILE::DecodeObj_Optional(BYTE * decdChunk, DWORD & i)
+dllPort void OBJDAT_FILE::DecodeObj_Optional(BYTE * decdChunk, DWORD & i)
 {
 
     switch (objType)
@@ -316,14 +316,14 @@ dllPort DWORD OBJDAT_FILE::Images_GetBufrSz()
     return bufSz;
 }
 
-dllPort OBJDAT_FILE::DecodeObj_Images(BYTE * decdChunk, DWORD & i)
+dllPort void OBJDAT_FILE::DecodeObj_Images(BYTE * decdChunk, DWORD & i)
 {
     DWORD curSpan;
 
     switch (objType)
     {
     case OT_SCENTEXT:
-        return 0;
+        return;
     case OT_RIDESHOP:
     case OT_SMALLSCENERY:
     case OT_LARGESCENERY:
@@ -362,7 +362,7 @@ dllPort OBJDAT_FILE::DecodeObj_Images(BYTE * decdChunk, DWORD & i)
     };
 }
 
-dllPort OBJDAT_FILE::DecodeObjDatFile()
+dllPort void OBJDAT_FILE::DecodeObjDatFile()
 {
     SV6_CHUNKHEADER decdChunk_header;
     static BYTE *   decdChunk = NULL;
@@ -476,7 +476,7 @@ dllPort OBJDAT_FILE::DecodeObjDatFile()
 #endif
 }
 
-dllPort OBJDAT_FILE::EncodeObj_Optional_Ride(BYTE * decdChunk, DWORD & i)
+dllPort void OBJDAT_FILE::EncodeObj_Optional_Ride(BYTE * decdChunk, DWORD & i)
 {
     BYTE  numColorSchemes;
     DWORD j, k, curLength;
@@ -514,7 +514,7 @@ dllPort OBJDAT_FILE::EncodeObj_Optional_Ride(BYTE * decdChunk, DWORD & i)
 #undef r // optional.ride
 }
 
-dllPort OBJDAT_FILE::EncodeObj_Optional_SmScenery(BYTE * decdChunk, DWORD & i)
+dllPort void OBJDAT_FILE::EncodeObj_Optional_SmScenery(BYTE * decdChunk, DWORD & i)
 {
     DWORD j;
 
@@ -532,7 +532,7 @@ dllPort OBJDAT_FILE::EncodeObj_Optional_SmScenery(BYTE * decdChunk, DWORD & i)
 #undef ss // optional.smallScenery
 }
 
-dllPort OBJDAT_FILE::EncodeObj_Optional_LgScenery(BYTE * decdChunk, DWORD & i)
+dllPort void OBJDAT_FILE::EncodeObj_Optional_LgScenery(BYTE * decdChunk, DWORD & i)
 {
 
 #define ls optional.largeScenery
@@ -562,7 +562,7 @@ dllPort OBJDAT_FILE::EncodeObj_Optional_LgScenery(BYTE * decdChunk, DWORD & i)
 #undef ls // optional.largeScenery
 }
 
-dllPort OBJDAT_FILE::EncodeObj_Optional_Group(BYTE * decdChunk, DWORD & i)
+dllPort void OBJDAT_FILE::EncodeObj_Optional_Group(BYTE * decdChunk, DWORD & i)
 {
 #define g optional.groupObjs
 
@@ -580,7 +580,7 @@ dllPort OBJDAT_FILE::EncodeObj_Optional_Group(BYTE * decdChunk, DWORD & i)
     }
 }
 
-dllPort OBJDAT_FILE::EncodeObj_Optional(BYTE * decdChunk, DWORD & i)
+dllPort void OBJDAT_FILE::EncodeObj_Optional(BYTE * decdChunk, DWORD & i)
 {
 
     switch (objType)
@@ -609,14 +609,14 @@ dllPort OBJDAT_FILE::EncodeObj_Optional(BYTE * decdChunk, DWORD & i)
     };
 }
 
-dllPort OBJDAT_FILE::EncodeObj_Images(BYTE * decdChunk, DWORD & i)
+dllPort void OBJDAT_FILE::EncodeObj_Images(BYTE * decdChunk, DWORD & i)
 {
     DWORD curSpan;
 
     switch (objType)
     {
     case OT_SCENTEXT:
-        return 0;
+        return;
     case OT_RIDESHOP:
     case OT_SMALLSCENERY:
     case OT_LARGESCENERY:
@@ -645,7 +645,7 @@ dllPort OBJDAT_FILE::EncodeObj_Images(BYTE * decdChunk, DWORD & i)
     };
 }
 
-dllPort CalcObjChecksum_XorRotate(DWORD & sum, BYTE data)
+dllPort void CalcObjChecksum_XorRotate(DWORD & sum, BYTE data)
 {
 #define DOASM 1
 
@@ -673,7 +673,7 @@ dllPort CalcObjChecksum_XorRotate(DWORD & sum, BYTE data)
 #endif
 }
 
-dllPort OBJDAT_FILE::EncodeObj_CalcChecksum(BYTE * decdChunk, DWORD & dcodFLength)
+dllPort void OBJDAT_FILE::EncodeObj_CalcChecksum(BYTE * decdChunk, DWORD & dcodFLength)
 {
 #define CSUM__START_VAL (DWORD(0xF369A75B))
     DWORD  i = 0;
@@ -707,7 +707,7 @@ dllPort OBJDAT_FILE::EncodeObj_CalcChecksum(BYTE * decdChunk, DWORD & dcodFLengt
 #undef DoCalc
 }
 
-dllPort OBJDAT_FILE::EncodeObjDatFile()
+dllPort void OBJDAT_FILE::EncodeObjDatFile()
 {
     SV6_CHUNKHEADER decdChunk_header;
     BYTE *          decdChunk;
@@ -819,17 +819,17 @@ dllPort OBJDAT_FILE::EncodeObjDatFile()
     free(decdChunk);
 }
 
-dllPort OBJDAT_FILE::LoadObjDatFile()
+dllPort void OBJDAT_FILE::LoadObjDatFile()
 {
     LoadObjDatFile(~datFileName);
 }
 
-dllPort OBJDAT_FILE::SaveObjDatFile(bool freeChunkBuff)
+dllPort void OBJDAT_FILE::SaveObjDatFile(bool freeChunkBuff)
 {
     SaveObjDatFile(~datFileName, freeChunkBuff);
 }
 
-dllPort OBJDAT_FILE::LoadObjDatFile(char * datName)
+dllPort void OBJDAT_FILE::LoadObjDatFile(char * datName)
 {
     FILE * datFile;
     datFile = fopen(datName, "r+b");
@@ -849,7 +849,7 @@ dllPort OBJDAT_FILE::LoadObjDatFile(char * datName)
     }
 }
 
-dllPort OBJDAT_FILE::SaveObjDatFile(char * datName, bool freeChunkBuff)
+dllPort void OBJDAT_FILE::SaveObjDatFile(char * datName, bool freeChunkBuff)
 {
     FILE * datFile;
 
@@ -874,7 +874,7 @@ dllPort OBJDAT_FILE::SaveObjDatFile(char * datName, bool freeChunkBuff)
     }
 }
 
-dllPort OBJDAT_FILE::LScen_GetTileDim(BYTE & cols, BYTE & rows)
+dllPort void OBJDAT_FILE::LScen_GetTileDim(BYTE & cols, BYTE & rows)
 {
     short i, minX, maxX, minY, maxY, curX, curY;
 
@@ -897,7 +897,7 @@ dllPort OBJDAT_FILE::LScen_GetTileDim(BYTE & cols, BYTE & rows)
 #undef tp // this->optional.largeScenery.tilePos
 }
 
-dllPort OBJDAT_FILE::LScen_GetViewImgSize(WORD view, WORD & width, WORD & height, short & xofs, short & yofs)
+dllPort void OBJDAT_FILE::LScen_GetViewImgSize(WORD view, WORD & width, WORD & height, short & xofs, short & yofs)
 {
     BYTE numRows, numCols;
     WORD i;
@@ -951,7 +951,7 @@ dllPort OBJDAT_FILE::LScen_GetViewImgSize(WORD view, WORD & width, WORD & height
 #undef yb
 }
 
-dllPort OBJDAT_FILE::GetImgSize(WORD imgI, WORD & width, WORD & height, short & xofs, short & yofs)
+dllPort void OBJDAT_FILE::GetImgSize(WORD imgI, WORD & width, WORD & height, short & xofs, short & yofs)
 {
 #define id this->imageDirectory[imgI]
 #define set(a) a = id.a;
@@ -965,7 +965,7 @@ dllPort OBJDAT_FILE::GetImgSize(WORD imgI, WORD & width, WORD & height, short & 
 #undef set
 }
 
-dllPort OBJDAT_FILE::GetNumTiles()
+dllPort void OBJDAT_FILE::GetNumTiles()
 {
     int                         i = 0;
     LARGE_SCENERY__POS_STRUCT * tp;

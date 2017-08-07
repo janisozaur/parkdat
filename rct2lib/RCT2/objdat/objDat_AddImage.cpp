@@ -1,15 +1,18 @@
 #define OBJDAT_ALL__CPP
 
+#include "..\..\StdAfx.h"
 #include <codeShortcuts.h>
 #include <mem3.h>
 #include <stdlib2.h>
 #include "objdat.h"
 
-dllPort OBJDAT_FILE::AddImage(int imgI, IMG_256 & img)
+#if 0
+dllPort void OBJDAT_FILE::AddImage(int imgI, IMG_256 & img)
 {
 }
+#endif
 
-dllPort OBJDAT_FILE::ClearImages()
+dllPort void OBJDAT_FILE::ClearImages()
 {
 }
 
@@ -44,7 +47,7 @@ CopyImage
 
 	height=id.height;
 	width=id.width;
-	alignWidth=round(width,alignUnitSize);
+	alignWidth=round2(width,alignUnitSize);
 
 	big.ImgMalloc(width,alignWidth);
 	

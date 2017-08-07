@@ -1,6 +1,7 @@
 // ParkDat_Class_ImgPreview.cpp : implementation file
 //
 
+#include "StdAfx.h"
 #include <malloc.h>
 #include "ParkDat.h"
 #include "ParkDat_Class_ImgPreview.h"
@@ -27,7 +28,7 @@ COLORREF colorRefMap[256];
 
 bool imgsInitialized = false;
 
-LoadDrawPalette()
+void LoadDrawPalette()
 {
     int     pI;
     CString bgColorStr;
@@ -115,7 +116,7 @@ bool ParkDat_Class_ImgPreview::InDrawRange()
 #define PAGECOPY 1
 
 #if PAGECOPY
-PreparePasteDC(CDC * mdc, CDC * dc, IMG_256 & img, int w, int h)
+void PreparePasteDC(CDC * mdc, CDC * dc, IMG_256 & img, int w, int h)
 {
 #else
 PreparePasteDC(CDC * dc, IMG_256 & img, int w, int h)
@@ -152,7 +153,7 @@ PreparePasteDC(CDC * dc, IMG_256 & img, int w, int h)
     } while ((++y) < img.h);
 }
 
-ParkDat_Class_ImgPreview::DrawPreview()
+void ParkDat_Class_ImgPreview::DrawPreview()
 {
     CDC *dc
 #if PAGECOPY
@@ -285,7 +286,7 @@ void ParkDat_Class_ImgPreview::OnPaint()
     // Do not call CStatic::OnPaint() for painting messages
 }
 
-ParkDat_Class_ImgPreview::FreeAllImgs()
+void ParkDat_Class_ImgPreview::FreeAllImgs()
 {
     i = 0;
     do

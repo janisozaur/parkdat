@@ -1,5 +1,7 @@
 #pragma once
 
+#include <stdtypes.h>
+
 #define RCT_SVX
 
 const BYTE RCTX_BYTE_EMPTY  = 0xff;

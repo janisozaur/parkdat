@@ -1,4 +1,4 @@
-
+#include "..\..\StdAfx.h"
 #include <fcntl.h>
 #include <fileio2.h>
 #include <io.h>

@@ -137,7 +137,7 @@ typedef struct
 SV6_OBJDAT_HEADER_BLOCK RCT1emulationTable;
 SV6_OBJDAT_HEADER       redWater;
 
-InitObjects();
+void InitObjects();
 
 #endif // OBJ_FIX
 

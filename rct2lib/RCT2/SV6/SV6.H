@@ -575,11 +575,11 @@ typedef dllPort struct SV6_FILE
 
     // functions
 
-    dllPort FixObj(int i), FixObjs();
+    dllPort void FixObj(int i), FixObjs();
 
     // open/save
-    dllPort OpenSv6(char * sv6FileName);
-    dllPort SaveSv6(char * sv6FileName);
+    dllPort void OpenSv6(char * sv6FileName);
+    dllPort void SaveSv6(char * sv6FileName);
 
     // init
     dllPort SV6_FILE();
@@ -596,9 +596,9 @@ typedef dllPort struct SV6_FILE
         PutPeepsInUniform(WORD shirtColor, WORD pantsColor, WORD overridePurchases), FastStaff(), NormalStaff(), SlowStaff(),
         FreezeStaff(),
 
-        dllPort int SetAllTrackFeatures(), SetTrackFeatures(short trackIndex);
+        SetAllTrackFeatures(), SetTrackFeatures(short trackIndex);
 
-    EmptyRidesOfGuests(SPRITESTATS * spritestats, SV6_SPRITESTRUCT * spriteBlock);
+    bool EmptyRidesOfGuests(SPRITESTATS * spritestats, SV6_SPRITESTRUCT * spriteBlock);
 
     int SpriteFunc(SPRITEFUNCCLASS fclass, SPRITEFUNCID func);
 

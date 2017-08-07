@@ -1,4 +1,4 @@
-
+#include "..\..\StdAfx.h"
 #define dllPort __declspec(dllexport)
 #include <codeshortcuts.h>
 #include <fileio2.h>
@@ -13,8 +13,8 @@ BYTE  byteEmpty = 0xff, &be = byteEmpty;
 WORD  wordEmpty = 0xffff, &we = wordEmpty;
 DWORD dwordEmpty = 0xffffffff, &dwe = dwordEmpty;
 
-gnp_SetSpriteStats(SPRITESTATS &);
-gnp_SetParkInfo(SV6_PARKDATA &);
+void gnp_SetSpriteStats(SPRITESTATS &);
+void gnp_SetParkInfo(SV6_PARKDATA &);
 
 int dllPort SV6_FILE::GenNewPark(HMODULE module)
 {
@@ -128,7 +128,7 @@ int dllPort SV6_FILE::GenNewPark(HMODULE module)
     return (1);
 }
 
-gnp_SetSpriteStats(SPRITESTATS & ss)
+void gnp_SetSpriteStats(SPRITESTATS & ss)
 {
     ss.statsA.availSprites = SV6_NUMSPRITES;
 
@@ -139,7 +139,7 @@ gnp_SetSpriteStats(SPRITESTATS & ss)
         ss.statsA.oversizedCount                                                                     = 0;
 }
 
-gnp_SetParkInfo(SV6_PARKDATA & pd)
+void gnp_SetParkInfo(SV6_PARKDATA & pd)
 {
     WEATHER
     WS_SUNNY = { 1920, 0, 0, 23, 23, 0, 0, 0, 0, 0, 0 };
@@ -233,7 +233,10 @@ int dllPort SV6_FILE::ChangeMoney(long newVal)
     */
 
     // calc checksum2
-    __asm { mov eax, money ror eax, 13 xor eax, 0F4EC9621h mov checksum2, eax }
+    __asm { mov eax, money
+            ror eax, 13
+            xor eax, 0F4EC9621h
+            mov checksum2, eax }
 
     //	softice rules
 

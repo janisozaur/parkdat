@@ -811,13 +811,13 @@ dllPort typedef struct OBJDAT_FILE
 
     dllPort OBJDAT_FILE();
 
-    dllPort Init_SetType(int odType);
+    dllPort void  Init_SetType(int odType);
 
     dllPort DWORD Images_GetBufrSz();
     dllPort WORD GetNumStringTables();
     dllPort bool HasGroupInfo();
 
-    dllPort DecodeObjDatFile(), DecodeObj_Optional(BYTE *decdChunk, DWORD &i),
+    dllPort void  DecodeObjDatFile(), DecodeObj_Optional(BYTE *decdChunk, DWORD &i),
         DecodeObj_Optional_Ride(BYTE *decdChunk, DWORD &i), DecodeObj_Optional_SmScenery(BYTE *decdChunk, DWORD &i),
         DecodeObj_Optional_LgScenery(BYTE *decdChunk, DWORD &i), DecodeObj_Optional_Group(BYTE *decdChunk, DWORD &i),
         DecodeObj_Images(BYTE *decdChunk, DWORD &i), EncodeObjDatFile(), EncodeObj_Optional(BYTE *decdChunk, DWORD &i),
@@ -826,25 +826,25 @@ dllPort typedef struct OBJDAT_FILE
         EncodeObj_Images(BYTE *decdChunk, DWORD &i), EncodeObj_CalcChecksum(BYTE *decdChunk, DWORD &i), LoadObjDatFile(),
         SaveObjDatFile(bool freeChunkBuff), LoadObjDatFile(char *), SaveObjDatFile(char *datName, bool freeChunkBuff);
 
-    dllPort LScen_GetTileDim(BYTE &cols, BYTE &rows),
+    dllPort void LScen_GetTileDim(BYTE &cols, BYTE &rows),
         LScen_GetViewImgSize(WORD view, WORD &width, WORD &height, short &xofs, short &yofs),
         GetImgSize(WORD imgI, WORD &width, WORD &height, short &xofs, short &yofs),
         CopyImage(int imgI, IMG_256 &img, short alignSize),
         AddImage(int imgI, short xofs, short yofs, IMG_256 &img, short imgEncdType, short seeThruColor), ClearImages();
     dllPort DWORD GetImageBufferSize();
-    dllPort       GetNumTiles();
+    dllPort void  GetNumTiles();
 
-    dllPort SortLScenTiles();
+    dllPort void SortLScenTiles();
 
     dllPort bool IsFlatRide();
     //-functions
 } OBJDAT_FILE;
 
-dllPort GetTileCenterXYZ(WORD view, long & x, long & y, long & z, WORD numCols, WORD numRows, WORD col, WORD row,
-                         WORD baseHeight, WORD imgWidth, WORD imgHeight);
+dllPort void GetTileCenterXYZ(WORD view, long & x, long & y, long & z, WORD numCols, WORD numRows, WORD col, WORD row,
+                              WORD baseHeight, WORD imgWidth, WORD imgHeight);
 
-dllPort TranslatePos(WORD view, WORD & retCol, WORD & retRow, WORD numCols, WORD numRows, WORD col, WORD row);
+dllPort void TranslatePos(WORD view, WORD & retCol, WORD & retRow, WORD numCols, WORD numRows, WORD col, WORD row);
 
-dllPort TranslatePos(WORD view, ISOMETRIC_TILE_VECTOR & pos, WORD numCols, WORD numRows, WORD col, WORD row);
+dllPort void TranslatePos(WORD view, ISOMETRIC_TILE_VECTOR & pos, WORD numCols, WORD numRows, WORD col, WORD row);
 
 #endif // _OBJDAT_

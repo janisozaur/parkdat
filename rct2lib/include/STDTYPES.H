@@ -62,11 +62,11 @@ typedef struct FLAG_256
     {
         return (data[bitNum >> 5].SetBit(bitNum & BYTE(256 / 8 - 1), val));
     }
-    SetAll()
+    int SetAll()
     {
         memset(data, BYTE(0xFF), sz(data));
     }
-    ClearAll()
+    int ClearAll()
     {
         memset(data, BYTE(0), sz(data));
     }

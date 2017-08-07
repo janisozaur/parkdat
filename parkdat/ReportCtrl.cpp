@@ -1,6 +1,7 @@
 // ReportCtrl.cpp : implementation file
 //
 
+#include "StdAfx.h"
 #include <codeshortcuts.h>
 #include "ParkDat.h"
 #include "ReportCtrl.h"
@@ -66,7 +67,7 @@ void ReportCtrl::OnColumnclick(NMHDR * pNMHDR, LRESULT * pResult)
 #define MAX__STRING_TABLE__LEN (MAX__STRING_TABLE__SIZE - 1)
 char strTbl[MAX_ROWS][MAX__STRING_TABLE__SIZE];
 
-ReportCtrl::SortItems(int col, int order)
+void ReportCtrl::SortItems(int col, int order)
 {
     int             numItems = GetItemCount();
     int             i, j, k, c;
@@ -74,12 +75,12 @@ ReportCtrl::SortItems(int col, int order)
     LVITEM *        loItem, *hiItem, *lviTmp;
     static LVITEM * lvi = NULL;
     if (order == 0)
-        return 0;
+        return;
 
     if (lviTmp = (LVITEM *)realloc(lvi, sz(LVITEM) * numItems))
         lvi = lviTmp;
     else
-        return 0;
+        return;
 
     if (order > 0) // descending
     {
@@ -131,7 +132,7 @@ ReportCtrl::SortItems(int col, int order)
     }
 }
 
-ReportCtrl::SwapItems(LVITEM & a, LVITEM & b)
+void ReportCtrl::SwapItems(LVITEM & a, LVITEM & b)
 {
     int tmpItemI;
     tmpItemI = a.iItem;

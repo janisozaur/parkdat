@@ -32,7 +32,7 @@ typedef struct VECT_2D
     union {
         long y, j, b;
     };
-    Set(long x, long y);
+    int Set(long x, long y);
     bool operator==(VECT_2D & v2);
 } VECT_2D;
 
@@ -50,7 +50,7 @@ typedef struct BOX_2D
     union {
         long bottom, bot, b, y2;
     };
-    Set(long l, long t, long r, long b);
+    int Set(long l, long t, long r, long b);
     bool IsInBox(BOX_2D & b2);
     bool operator&&(BOX_2D & b2);
     bool PtInBox(int x, int y);
@@ -67,19 +67,19 @@ typedef struct IMG_256
     union {
         BYTE *imgData, *id;
     };
-    operator~();
-    Set(WORD w, WORD h, BYTE * imgData);
+    int operator~();
+    int Set(WORD w, WORD h, BYTE * imgData);
     bool ImgMalloc(WORD iw, WORD ih);
     bool ImgMalloc();
-    ImgFree();
+    int ImgFree();
     // Paste() -- paste this image into another
-    IMG_256::Paste(long x, long y, IMG_256 & p, bool transparent, WORD bg);
+    int IMG_256::Paste(long x, long y, IMG_256 & p, bool transparent, WORD bg);
     // Copy() -- copy from this image to another
-    Copy(long x, long y, IMG_256 & p, bool transparent, WORD bg);
-    MoveLine(int length, int x, int y, int i, int j, IMG_256 & p, WORD direction, bool transparent, WORD bg);
-    MovePixel(int x, int y, int i, int j, IMG_256 & p, WORD direction, bool transparent, WORD bg);
-    Clear(WORD bg);
-    Flip();
+    int Copy(long x, long y, IMG_256 & p, bool transparent, WORD bg);
+    int MoveLine(int length, int x, int y, int i, int j, IMG_256 & p, WORD direction, bool transparent, WORD bg);
+    int MovePixel(int x, int y, int i, int j, IMG_256 & p, WORD direction, bool transparent, WORD bg);
+    int Clear(WORD bg);
+    int Flip();
     int PixOfs(int x, int y);
     bool InImgRange(int x, int y);
     BOX_2D MakeImgBox();
@@ -106,7 +106,7 @@ typedef struct IMG_256__CHAIN_LINK
     union {
         IMG_256__CHAIN_LINK *n, *next;
     };
-    Set(IMG_256__CHAIN_LINK * last, WORD x, WORD y, WORD z, IMG_256 & id, IMG_256__CHAIN_LINK * n);
+    int Set(IMG_256__CHAIN_LINK * last, WORD x, WORD y, WORD z, IMG_256 & id, IMG_256__CHAIN_LINK * n);
     bool operator<(IMG_256__CHAIN_LINK & l2) // z order less
         ;
     bool operator>(IMG_256__CHAIN_LINK & l2) // z order greater
@@ -133,11 +133,11 @@ typedef struct IMG_256__CHAIN
             /*,&cur*/
             ;
     };
-    Set(IMG_256__CHAIN_LINK * rootLink, IMG_256__CHAIN_LINK * curLink);
-    Init();
-    Init(IMG_256__CHAIN_LINK & startLink);
+    int Set(IMG_256__CHAIN_LINK * rootLink, IMG_256__CHAIN_LINK * curLink);
+    int Init();
+    int Init(IMG_256__CHAIN_LINK & startLink);
 
-    Clear();
+    int Clear();
     IMG_256__CHAIN_LINK * operator+=(IMG_256__CHAIN_LINK & newLink)
         // insert new image into proper z-order
         ;

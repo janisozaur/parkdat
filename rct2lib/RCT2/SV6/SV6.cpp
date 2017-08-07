@@ -1,12 +1,12 @@
-
 #define dllPort __declspec(dllexport)
+#include "..\..\StdAfx.h"
 #include <codeshortcuts.h>
 #include <fileio2.h>
 #include <rct2lib.h>
 #include <stdio.h>
 #include "sv6.h"
 
-dllPort MakeDatPath(FILENAME & dp, SV6_OBJDAT_HEADER & odh)
+dllPort void MakeDatPath(FILENAME & dp, SV6_OBJDAT_HEADER & odh)
 {
     int  i;
     char datName[9];
@@ -26,7 +26,7 @@ dllPort MakeDatPath(FILENAME & dp, SV6_OBJDAT_HEADER & odh)
     dp &= ".dat";
 }
 
-dllPort SV6_FILE::FixObj(int i)
+dllPort void SV6_FILE::FixObj(int i)
 {
     FILE * f;
     int    j, k;
@@ -60,7 +60,7 @@ dllPort SV6_FILE::FixObj(int i)
     }
 }
 
-dllPort SV6_FILE::FixObjs()
+dllPort void SV6_FILE::FixObjs()
 {
     int i;
     for_i0(i, SV6_OBJDAT_NUMENTRIES_ALL)
@@ -76,14 +76,14 @@ SV6_FILE::SV6_FILE()
     ptrsInitted = false;
 }
 
-SV6_FILE::OpenSv6(char * sv6FileName)
+void SV6_FILE::OpenSv6(char * sv6FileName)
 {
     ::OpenSv6(this, sv6FileName);
 
     InitMapPtrs();
 }
 
-SV6_FILE::SaveSv6(char * sv6FileName)
+void SV6_FILE::SaveSv6(char * sv6FileName)
 {
     ::SaveSv6(this, sv6FileName);
 }

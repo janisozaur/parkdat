@@ -1,11 +1,12 @@
 #define OBJDAT_ALL__CPP
 
+#include "..\..\StdAfx.h"
 #include <codeShortcuts.h>
 #include <mem3.h>
 #include <stdlib2.h>
 #include "objdat.h"
 
-dllPort OBJDAT_FILE::CopyImage(int imgI, IMG_256 & img, short alignUnitSize)
+dllPort void OBJDAT_FILE::CopyImage(int imgI, IMG_256 & img, short alignUnitSize)
 {
     WORD width, height;
     DWORD
@@ -28,7 +29,7 @@ dllPort OBJDAT_FILE::CopyImage(int imgI, IMG_256 & img, short alignUnitSize)
 
     height     = id.height;
     width      = id.width;
-    alignWidth = round(width, alignUnitSize);
+    alignWidth = round2(width, alignUnitSize);
 
     big.ImgMalloc(alignWidth, height);
 

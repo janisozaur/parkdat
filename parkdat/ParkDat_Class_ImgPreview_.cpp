@@ -1,6 +1,7 @@
 // ParkDat_Class_ImgPreview.cpp : implementation file
 //
 
+#include "StdAfx.h"
 #include "ParkDat.h"
 #include "ParkDat_Class_ImgPreview.h"
 #include "stdafx.h"
@@ -27,7 +28,7 @@ ParkDat_Class_ImgPreview::~ParkDat_Class_ImgPreview()
 {
 }
 
-ParkDat_Class_ImgPreview::OnPaint()
+void ParkDat_Class_ImgPreview::OnPaint()
 {
     if (InDrawRange())
     {
@@ -46,7 +47,7 @@ bool ParkDat_Class_ImgPreview::InDrawRange()
     return result;
 }
 
-ParkDat_Class_ImgPreview::DrawPreview()
+void ParkDat_Class_ImgPreview::DrawPreview()
 {
 }
 

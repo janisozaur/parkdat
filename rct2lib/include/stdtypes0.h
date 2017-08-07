@@ -28,7 +28,9 @@ typedef int            BOOL;
 //#ifndef
 //#endif //
 
+#ifndef _BASETSD_H_
 typedef unsigned long SIZE_T;
+#endif
 
 #ifndef CSTR_EQUAL
 #define CSTR_EQUAL 0

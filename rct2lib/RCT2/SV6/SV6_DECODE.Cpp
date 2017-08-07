@@ -1,3 +1,4 @@
+#include "..\..\StdAfx.h"
 #include <FileIO2.h>
 #include <rct_svx.h>
 #include <stdlib2.h>
@@ -38,7 +39,7 @@ DoImportObjectSkip:
 
 #include "SV6_DECODE_DecodeSv6Chunk.inl"
 
-DecodeSv6(SV6_FILE * sv6, char * inFileStream, int sv6CompressedSize)
+void DecodeSv6(SV6_FILE * sv6, char * inFileStream, int sv6CompressedSize)
 {
     DWORD i = 0, chunkI;
 
@@ -85,7 +86,7 @@ DoDecodeSv6:
 #undef s
 }
 
-OpenSv6(SV6_FILE * sv6, char * sv6FileName)
+void OpenSv6(SV6_FILE * sv6, char * sv6FileName)
 {
     int    sv6CompressedSize;
     char * inFileStream;

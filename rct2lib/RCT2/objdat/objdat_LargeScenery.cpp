@@ -10,7 +10,7 @@ enum
     J = 1
 };
 
-dllPort OBJDAT_FILE::SortLScenTiles()
+dllPort void OBJDAT_FILE::SortLScenTiles()
 {
     int i, j, k, jTileCount;
     struct
@@ -67,8 +67,8 @@ dllPort OBJDAT_FILE::SortLScenTiles()
     }
 }
 
-dllPort GetTileCenterXYZ(WORD view, long & x, long & y, long & z, WORD numCols, WORD numRows, WORD col, WORD row,
-                         WORD baseHeight, WORD imgWidth, WORD imgHeight)
+dllPort void GetTileCenterXYZ(WORD view, long & x, long & y, long & z, WORD numCols, WORD numRows, WORD col, WORD row,
+                              WORD baseHeight, WORD imgWidth, WORD imgHeight)
 {
     // WORD col,row;
     WORD diagSpan, baseTop_y;
@@ -106,7 +106,7 @@ dllPort GetTileCenterXYZ(WORD view, long & x, long & y, long & z, WORD numCols, 
     y = isoOrigin.y % imgHeight;
 };
 
-dllPort TranslatePos(WORD view, short & retCol, short & retRow, WORD numCols, WORD numRows, WORD col, WORD row)
+dllPort void TranslatePos(WORD view, short & retCol, short & retRow, WORD numCols, WORD numRows, WORD col, WORD row)
 {
     // WORD col,row;
     WORD diagSpan, baseTop_y;
@@ -138,7 +138,7 @@ dllPort TranslatePos(WORD view, short & retCol, short & retRow, WORD numCols, WO
     retRow = rotOrigin.y % tileSpan;
 }
 
-dllPort TranslatePos(WORD view, ISOMETRIC_TILE_VECTOR & pos, WORD numCols, WORD numRows, WORD col, WORD row)
+dllPort void TranslatePos(WORD view, ISOMETRIC_TILE_VECTOR & pos, WORD numCols, WORD numRows, WORD col, WORD row)
 {
     // pos.Set(col,row);
     TranslatePos(view, pos.x, pos.y, numCols, numRows, col, row);

@@ -1,11 +1,12 @@
 #define OBJDAT_ALL__CPP
 
+#include "..\..\StdAfx.h"
 #include <codeShortcuts.h>
 #include <mem3.h>
 #include <stdlib2.h>
 #include "objdat.h"
 
-dllPort OBJDAT_FILE::AddImage(int imgI, short xofs, short yofs, IMG_256 & img, short imgEncdType, short seeThruColor)
+dllPort void OBJDAT_FILE::AddImage(int imgI, short xofs, short yofs, IMG_256 & img, short imgEncdType, short seeThruColor)
 {
     WORD width, height;
     DWORD
@@ -151,7 +152,7 @@ dllPort OBJDAT_FILE::AddImage(int imgI, short xofs, short yofs, IMG_256 & img, s
     }
 }
 
-dllPort OBJDAT_FILE::ClearImages()
+dllPort void OBJDAT_FILE::ClearImages()
 {
 
     this->numImages    = 0;

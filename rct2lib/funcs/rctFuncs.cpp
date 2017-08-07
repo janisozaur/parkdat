@@ -14,6 +14,7 @@ FF		one byte
        3		5		offset+32 of string to be copied
 */
 
+#include "..\StdAfx.h"
 #include <FCNTL.H>
 #include <direct.h>
 #include <errno.h>

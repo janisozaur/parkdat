@@ -21,7 +21,7 @@ public:
     // Construction
 public:
     ReportControl();
-    SelectItem(int i);
+    void SelectItem(int i);
     int TextSearch(int i, CString s, bool wrap, bool caseIgnore);
     int TextSearch(int i, char * s, bool wrap, bool caseIgnore);
 

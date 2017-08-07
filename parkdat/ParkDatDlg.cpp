@@ -2,6 +2,7 @@
 //
 
 #define dllPort __declspec(dllimport)
+#include "StdAfx.h"
 #include <codeshortcuts.h>
 #include <rct2lib.h>
 #include "DlgProxy.h"

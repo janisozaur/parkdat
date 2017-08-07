@@ -217,7 +217,7 @@ typedef struct
     SV6_MAPBYTE7
     byte7;
 
-    dllPort GetLandType(short &ground, short &edge), SetLandType(short ground, short edge);
+    dllPort void GetLandType(short &ground, short &edge), SetLandType(short ground, short edge);
 
 } SV6_PARKMAPDATA, *LP_SV6_PARKMAPDATA;
 
@@ -236,7 +236,7 @@ typedef struct
     byte6;
     SV6_MAPBYTE7_ALT
     byte7;
-    SetWallColors(short c1, short c2, short c3)
+    int SetWallColors(short c1, short c2, short c3)
     {
         byte5.wall.color3    = c3;
         byte6.wall.color1    = c1;

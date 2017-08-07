@@ -31,7 +31,7 @@ WORD GetLastFreeSprite(SV6_SPRITESTRUCTARRAY * spriteBlock, WORD firstfree)
 #undef cursprite
 }
 
-SortSpriteChain(SV6_SPRITESTRUCTARRAY * spriteBlock, short SpriteID, short * firstSpriteIndex)
+void SortSpriteChain(SV6_SPRITESTRUCTARRAY * spriteBlock, short SpriteID, short * firstSpriteIndex)
 {
 
     int  i, x, y, prevI, nextI;
@@ -54,8 +54,7 @@ SortSpriteChain(SV6_SPRITESTRUCTARRAY * spriteBlock, short SpriteID, short * fir
     }
 }
 
-SV6_FILE
-::EmptyRidesOfGuests(SPRITESTATS * spritestats, SV6_SPRITESTRUCT * spriteBlock)
+bool SV6_FILE::EmptyRidesOfGuests(SPRITESTATS * spritestats, SV6_SPRITESTRUCT * spriteBlock)
 {
 
     WORD index;
