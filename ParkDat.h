@@ -9,10 +9,10 @@
 #endif // _MSC_VER > 1000
 
 #ifndef __AFXWIN_H__
-	#error include 'stdafx.h' before including this file for PCH
+#error include 'stdafx.h' before including this file for PCH
 #endif
 
-#include "resource.h"		// main symbols
+#include "resource.h" // main symbols
 
 /////////////////////////////////////////////////////////////////////////////
 // CParkDatApp:
@@ -22,30 +22,28 @@
 class CParkDatApp : public CWinApp
 {
 public:
-	HACCEL accel;
+    HACCEL accel;
 
-	CParkDatApp();
+    CParkDatApp();
 
-// Overrides
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CParkDatApp)
-	public:
-	virtual BOOL InitInstance();
-	virtual BOOL ProcessMessageFilter(int code,LPMSG lpMsg); 
-	//}}AFX_VIRTUAL
+    // Overrides
+    // ClassWizard generated virtual function overrides
+    //{{AFX_VIRTUAL(CParkDatApp)
+public:
+    virtual BOOL InitInstance();
+    virtual BOOL ProcessMessageFilter(int code, LPMSG lpMsg);
+    //}}AFX_VIRTUAL
 
-// Implementation
+    // Implementation
 
-	//{{AFX_MSG(CParkDatApp)
-		// NOTE - the ClassWizard will add and remove member functions here.
-		//    DO NOT EDIT what you see in these blocks of generated code !
-	//}}AFX_MSG
-	DECLARE_MESSAGE_MAP()
+    //{{AFX_MSG(CParkDatApp)
+    // NOTE - the ClassWizard will add and remove member functions here.
+    //    DO NOT EDIT what you see in these blocks of generated code !
+    //}}AFX_MSG
+    DECLARE_MESSAGE_MAP()
 };
 
-CParkDatApp*theAppP;
-
-
+CParkDatApp * theAppP;
 
 /////////////////////////////////////////////////////////////////////////////
 

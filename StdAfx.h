@@ -10,34 +10,28 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-#define VC_EXTRALEAN		// Exclude rarely-used stuff from Windows headers
+#define VC_EXTRALEAN // Exclude rarely-used stuff from Windows headers
 
-#include <afxwin.h>         // MFC core and standard components
-#include <afxext.h>         // MFC extensions
-#include <afxdisp.h>        // MFC Automation classes
-#include <afxdtctl.h>		// MFC support for Internet Explorer 4 Common Controls
+#include <afxdisp.h>  // MFC Automation classes
+#include <afxdtctl.h> // MFC support for Internet Explorer 4 Common Controls
+#include <afxext.h>   // MFC extensions
+#include <afxwin.h>   // MFC core and standard components
 #ifndef _AFX_NO_AFXCMN_SUPPORT
-#include <afxcmn.h>			// MFC support for Windows Common Controls
-#endif // _AFX_NO_AFXCMN_SUPPORT
+#include <afxcmn.h> // MFC support for Windows Common Controls
+#endif              // _AFX_NO_AFXCMN_SUPPORT
 
 // This macro is the same as IMPLEMENT_OLECREATE, except it passes TRUE
 //  for the bMultiInstance parameter to the COleObjectFactory constructor.
 //  We want a separate instance of this application to be launched for
 //  each automation proxy object requested by automation controllers.
 #ifndef IMPLEMENT_OLECREATE2
-#define IMPLEMENT_OLECREATE2(class_name, external_name, l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8) \
-	AFX_DATADEF COleObjectFactory class_name::factory(class_name::guid, \
-		RUNTIME_CLASS(class_name), TRUE, _T(external_name)); \
-	const AFX_DATADEF GUID class_name::guid = \
-		{ l, w1, w2, { b1, b2, b3, b4, b5, b6, b7, b8 } };
+#define IMPLEMENT_OLECREATE2(class_name, external_name, l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8)                             \
+    AFX_DATADEF COleObjectFactory class_name::factory(class_name::guid, RUNTIME_CLASS(class_name), TRUE, _T(external_name));   \
+    const AFX_DATADEF GUID class_name::guid = { l, w1, w2, { b1, b2, b3, b4, b5, b6, b7, b8 } };
 #endif // IMPLEMENT_OLECREATE2
 
-
-#include<fileio2.h>;
+#include <fileio2.h>;
 #define SETTINGS_FILENAME "parkdat_settings.bin"
-
-
-
 
 //{{AFX_INSERT_LOCATION}}
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.

@@ -12,33 +12,30 @@
 
 class ImgFrameClass : public CStatic
 {
-// Construction
+    // Construction
 public:
-	ImgFrameClass();
+    ImgFrameClass();
 
-
-// Attributes
+    // Attributes
 public:
-
-// Operations
+    // Operations
 public:
+    // Overrides
+    // ClassWizard generated virtual function overrides
+    //{{AFX_VIRTUAL(ImgFrameClass)
+    //}}AFX_VIRTUAL
 
-// Overrides
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(ImgFrameClass)
-	//}}AFX_VIRTUAL
-
-// Implementation
+    // Implementation
 public:
-	virtual ~ImgFrameClass();
+    virtual ~ImgFrameClass();
 
-	// Generated message map functions
+    // Generated message map functions
 protected:
-	//{{AFX_MSG(ImgFrameClass)
-		// NOTE - the ClassWizard will add and remove member functions here.
-	//}}AFX_MSG
+    //{{AFX_MSG(ImgFrameClass)
+    // NOTE - the ClassWizard will add and remove member functions here.
+    //}}AFX_MSG
 
-	DECLARE_MESSAGE_MAP()
+    DECLARE_MESSAGE_MAP()
 };
 
 /////////////////////////////////////////////////////////////////////////////

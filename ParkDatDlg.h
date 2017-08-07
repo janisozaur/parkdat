@@ -8,9 +8,9 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-#include<rct2lib.h>
-#include"ReportControl.h"
-#include"ParkDat_Class_ImgPreview.h"
+#include <rct2lib.h>
+#include "ParkDat_Class_ImgPreview.h"
+#include "ReportControl.h"
 
 class CParkDatDlgAutoProxy;
 
@@ -19,126 +19,114 @@ class CParkDatDlgAutoProxy;
 
 class CParkDatDlg : public CDialog
 {
-	DECLARE_DYNAMIC(CParkDatDlg);
-	friend class CParkDatDlgAutoProxy;
+    DECLARE_DYNAMIC(CParkDatDlg);
+    friend class CParkDatDlgAutoProxy;
 
-// Construction
+    // Construction
 public:
-	CParkDatDlg(CWnd* pParent = NULL);	// standard constructor
-	virtual ~CParkDatDlg();
+    CParkDatDlg(CWnd * pParent = NULL); // standard constructor
+    virtual ~CParkDatDlg();
 
-	bool sv6Loaded;
+    bool sv6Loaded;
 
-	struct
-	{
-		FILENAME sv6Name;
-	}
-	appData;
+    struct
+    {
+        FILENAME sv6Name;
+    } appData;
 
-	CString outputStr;
+    CString outputStr;
 
+    FILENAME settingsFile;
 
+    UpdateDatTable();
 
-	FILENAME settingsFile;
+    ProgressStart(int lo, int hi, int pos, int step);
+    ProgressEnd();
+    ProgressStep();
 
-	UpdateDatTable();
+    LoadSettings();
+    SaveSettings();
 
-	ProgressStart(int lo,int hi,int pos,int step);
-	ProgressEnd();
-	ProgressStep();
+    DataGet();
+    DataSet();
 
-	LoadSettings();
-	SaveSettings();
+    ReplaceItem(int i, OBJDATHEADER & o);
+    ReplaceItem(int i, char * ofn);
 
-	DataGet();
-	DataSet();
+    DeleteItem(int i);
 
-	ReplaceItem(int i,OBJDATHEADER&o);
-	ReplaceItem(int i,char*ofn);
+    SetMenusToAvailable();
 
-	DeleteItem(int i);
+    UpdateViewTableItem(int i);
+    UpdateViewTableItem_ListI(int i);
 
-	SetMenusToAvailable();
+    UpdateImgPreview();
 
-	UpdateViewTableItem(int i);
-	UpdateViewTableItem_ListI(int i);
+    int FindListIndex(int i);
 
-	UpdateImgPreview();
+    SetDatListToDefStyle();
 
-	int FindListIndex(int i);
+    OutputMsg(int code, int d1, char * s1, int d2, char * s2);
+    OutputMsg(int code, int d, char * s);
+    OutputMsg(int code, int d, char * s1, char * s2);
+    OutputMsg(int code);
+    CParkDatDlg::OutputMsg(int code, char * s);
 
-	SetDatListToDefStyle();
+    // Dialog Data
+    //{{AFX_DATA(CParkDatDlg)
+    enum
+    {
+        IDD = IDD_PARKDAT_DIALOG
+    };
+    CStatic                  searchRslt;
+    ParkDat_Class_ImgPreview imgPreview;
+    CEdit                    outputBox;
+    ReportControl            datList;
+    CProgressCtrl            progress;
+    CString                  sv6Name;
+    CString                  searchText;
+    //}}AFX_DATA
 
-	OutputMsg
-	(	int code,
-		int d1,char*s1,
-		int d2,char*s2
-	);
-	OutputMsg
-	(	int code,
-		int d,char*s
-	);
-	OutputMsg
-	(	int code,
-		int d,char*s1,char*s2
-	);
-	OutputMsg(int code);
-	CParkDatDlg::OutputMsg(int code,char*s);
-
-
-// Dialog Data
-	//{{AFX_DATA(CParkDatDlg)
-	enum { IDD = IDD_PARKDAT_DIALOG };
-	CStatic	searchRslt;
-	ParkDat_Class_ImgPreview	imgPreview;
-	CEdit	outputBox;
-	ReportControl	datList;
-	CProgressCtrl	progress;
-	CString	sv6Name;
-	CString	searchText;
-	//}}AFX_DATA
-
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CParkDatDlg)
-	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV support
-	//}}AFX_VIRTUAL
-
-// Implementation
+    // ClassWizard generated virtual function overrides
+    //{{AFX_VIRTUAL(CParkDatDlg)
 protected:
-	CParkDatDlgAutoProxy* m_pAutoProxy;
-	HICON m_hIcon;
+    virtual void DoDataExchange(CDataExchange * pDX); // DDX/DDV support
+                                                      //}}AFX_VIRTUAL
 
-	BOOL CanExit();
-	
-	
-	InitDatListCtrl();
+    // Implementation
+protected:
+    CParkDatDlgAutoProxy * m_pAutoProxy;
+    HICON                  m_hIcon;
 
-	// Generated message map functions
-	//{{AFX_MSG(CParkDatDlg)
-	virtual BOOL OnInitDialog();
-	afx_msg void OnSysCommand(UINT nID, LPARAM lParam);
-	afx_msg void OnPaint();
-	afx_msg HCURSOR OnQueryDragIcon();
-	afx_msg void OnClose();
-	virtual void OnOK();
-	virtual void OnCancel();
-	afx_msg void OnButtonSv6Name();
-	afx_msg void OnButtonOpenSv6();
-	afx_msg void OnButtonAddDat();
-	afx_msg void OnButtonDeleteSelectedDat();
-	afx_msg void OnButtonReplaceSelectedDat();
-	afx_msg void OnButtonUpdateDatHeaders();
-	afx_msg void OnButtonSaveSv6();
-	afx_msg void OnButtonUpdateImgPreview();
-	afx_msg void OnKeydownListDats(NMHDR* pNMHDR, LRESULT* pResult);
-	afx_msg void OnItemclickListDats(NMHDR* pNMHDR, LRESULT* pResult);
-	afx_msg void OnItemdblclickListDats(NMHDR* pNMHDR, LRESULT* pResult);
-	afx_msg void OnItemchangedListDats(NMHDR* pNMHDR, LRESULT* pResult);
-	afx_msg void OnButtonDeleteUnused();
-	afx_msg void OnButtonSearch();
-	//}}AFX_MSG
-	DECLARE_MESSAGE_MAP()
+    BOOL CanExit();
+
+    InitDatListCtrl();
+
+    // Generated message map functions
+    //{{AFX_MSG(CParkDatDlg)
+    virtual BOOL OnInitDialog();
+    afx_msg void OnSysCommand(UINT nID, LPARAM lParam);
+    afx_msg void OnPaint();
+    afx_msg HCURSOR OnQueryDragIcon();
+    afx_msg void    OnClose();
+    virtual void    OnOK();
+    virtual void    OnCancel();
+    afx_msg void    OnButtonSv6Name();
+    afx_msg void    OnButtonOpenSv6();
+    afx_msg void    OnButtonAddDat();
+    afx_msg void    OnButtonDeleteSelectedDat();
+    afx_msg void    OnButtonReplaceSelectedDat();
+    afx_msg void    OnButtonUpdateDatHeaders();
+    afx_msg void    OnButtonSaveSv6();
+    afx_msg void    OnButtonUpdateImgPreview();
+    afx_msg void OnKeydownListDats(NMHDR * pNMHDR, LRESULT * pResult);
+    afx_msg void OnItemclickListDats(NMHDR * pNMHDR, LRESULT * pResult);
+    afx_msg void OnItemdblclickListDats(NMHDR * pNMHDR, LRESULT * pResult);
+    afx_msg void OnItemchangedListDats(NMHDR * pNMHDR, LRESULT * pResult);
+    afx_msg void OnButtonDeleteUnused();
+    afx_msg void OnButtonSearch();
+    //}}AFX_MSG
+    DECLARE_MESSAGE_MAP()
 };
 
 //{{AFX_INSERT_LOCATION}}

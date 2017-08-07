@@ -10,49 +10,45 @@
 /////////////////////////////////////////////////////////////////////////////
 // ParkDat_Class_ImgPreview window
 
-#include<img256_lib.h>
-#include<rct2Lib.h>
-
+#include <img256_lib.h>
+#include <rct2Lib.h>
 
 class ParkDat_Class_ImgPreview : public CStatic
 {
-//data 
+    // data
 public:
-	int i;
+    int i;
 
-	IMG_256*imgs[SV6_OBJDAT_NUMENTRIES_ALL];
+    IMG_256 * imgs[SV6_OBJDAT_NUMENTRIES_ALL];
 
-// Construction
+    // Construction
 public:
-	ParkDat_Class_ImgPreview();
+    ParkDat_Class_ImgPreview();
 
-// Attributes
+    // Attributes
 public:
-
-
-// Operations
+    // Operations
 public:
+    // Overrides
+    // ClassWizard generated virtual function overrides
+    //{{AFX_VIRTUAL(ParkDat_Class_ImgPreview)
+    OnPaint();
+    //}}AFX_VIRTUAL
 
-// Overrides
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(ParkDat_Class_ImgPreview)
-	OnPaint();
-	//}}AFX_VIRTUAL
-
-// Implementation
+    // Implementation
 public:
-	virtual ~ParkDat_Class_ImgPreview();
+    virtual ~ParkDat_Class_ImgPreview();
 
-	bool InDrawRange();	
-	DrawPreview();
+    bool InDrawRange();
+    DrawPreview();
 
-	// Generated message map functions
+    // Generated message map functions
 protected:
-	//{{AFX_MSG(ParkDat_Class_ImgPreview)
-		// NOTE - the ClassWizard will add and remove member functions here.
-	//}}AFX_MSG
+    //{{AFX_MSG(ParkDat_Class_ImgPreview)
+    // NOTE - the ClassWizard will add and remove member functions here.
+    //}}AFX_MSG
 
-	DECLARE_MESSAGE_MAP()
+    DECLARE_MESSAGE_MAP()
 };
 
 /////////////////////////////////////////////////////////////////////////////

@@ -1,9 +1,9 @@
 // ParkDat_Class_ImgPreview.cpp : implementation file
 //
 
-#include "stdafx.h"
 #include "ParkDat.h"
 #include "ParkDat_Class_ImgPreview.h"
+#include "stdafx.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -16,11 +16,11 @@ static char THIS_FILE[] = __FILE__;
 
 ParkDat_Class_ImgPreview::ParkDat_Class_ImgPreview()
 {
-	i=0;do
-	{
-		imgs[i++]=new(IMG_256);	
-	}
-	while(i<SV6_OBJDAT_NUMENTRIES_ALL);
+    i = 0;
+    do
+    {
+        imgs[i++] = new (IMG_256);
+    } while (i < SV6_OBJDAT_NUMENTRIES_ALL);
 }
 
 ParkDat_Class_ImgPreview::~ParkDat_Class_ImgPreview()
@@ -28,35 +28,32 @@ ParkDat_Class_ImgPreview::~ParkDat_Class_ImgPreview()
 }
 
 ParkDat_Class_ImgPreview::OnPaint()
-{	
-	if(InDrawRange())
-	{
-		DrawPreview();
-	}
+{
+    if (InDrawRange())
+    {
+        DrawPreview();
+    }
 
-	//CStatic::OnPaint();
+    // CStatic::OnPaint();
 }
 
 bool ParkDat_Class_ImgPreview::InDrawRange()
 {
-	bool result;
+    bool result;
 
-	result=true;
+    result = true;
 
-	return result;
+    return result;
 }
 
 ParkDat_Class_ImgPreview::DrawPreview()
 {
-
 }
 
-
-
 BEGIN_MESSAGE_MAP(ParkDat_Class_ImgPreview, CStatic)
-	//{{AFX_MSG_MAP(ParkDat_Class_ImgPreview)
-		// NOTE - the ClassWizard will add and remove mapping macros here.
-	//}}AFX_MSG_MAP
+//{{AFX_MSG_MAP(ParkDat_Class_ImgPreview)
+// NOTE - the ClassWizard will add and remove mapping macros here.
+//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////

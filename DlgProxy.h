@@ -15,42 +15,41 @@ class CParkDatDlg;
 
 class CParkDatDlgAutoProxy : public CCmdTarget
 {
-	DECLARE_DYNCREATE(CParkDatDlgAutoProxy)
+    DECLARE_DYNCREATE(CParkDatDlgAutoProxy)
 
-	CParkDatDlgAutoProxy();           // protected constructor used by dynamic creation
+    CParkDatDlgAutoProxy(); // protected constructor used by dynamic creation
 
-// Attributes
+    // Attributes
 public:
-	CParkDatDlg* m_pDialog;
+    CParkDatDlg * m_pDialog;
 
-// Operations
+    // Operations
 public:
+    // Overrides
+    // ClassWizard generated virtual function overrides
+    //{{AFX_VIRTUAL(CParkDatDlgAutoProxy)
+public:
+    virtual void OnFinalRelease();
+    //}}AFX_VIRTUAL
 
-// Overrides
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CParkDatDlgAutoProxy)
-	public:
-	virtual void OnFinalRelease();
-	//}}AFX_VIRTUAL
-
-// Implementation
+    // Implementation
 protected:
-	virtual ~CParkDatDlgAutoProxy();
+    virtual ~CParkDatDlgAutoProxy();
 
-	// Generated message map functions
-	//{{AFX_MSG(CParkDatDlgAutoProxy)
-		// NOTE - the ClassWizard will add and remove member functions here.
-	//}}AFX_MSG
+    // Generated message map functions
+    //{{AFX_MSG(CParkDatDlgAutoProxy)
+    // NOTE - the ClassWizard will add and remove member functions here.
+    //}}AFX_MSG
 
-	DECLARE_MESSAGE_MAP()
-	DECLARE_OLECREATE(CParkDatDlgAutoProxy)
+    DECLARE_MESSAGE_MAP()
+    DECLARE_OLECREATE(CParkDatDlgAutoProxy)
 
-	// Generated OLE dispatch map functions
-	//{{AFX_DISPATCH(CParkDatDlgAutoProxy)
-		// NOTE - the ClassWizard will add and remove member functions here.
-	//}}AFX_DISPATCH
-	DECLARE_DISPATCH_MAP()
-	DECLARE_INTERFACE_MAP()
+    // Generated OLE dispatch map functions
+    //{{AFX_DISPATCH(CParkDatDlgAutoProxy)
+    // NOTE - the ClassWizard will add and remove member functions here.
+    //}}AFX_DISPATCH
+    DECLARE_DISPATCH_MAP()
+    DECLARE_INTERFACE_MAP()
 };
 
 /////////////////////////////////////////////////////////////////////////////

@@ -10,40 +10,36 @@
 /////////////////////////////////////////////////////////////////////////////
 // ReportCtrl window
 
-typedef int (CALLBACK*PCOMPARE)(long,long,long); 
+typedef int(CALLBACK * PCOMPARE)(long, long, long);
 
 class ReportCtrl : public CListCtrl
 {
-// Construction
+    // Construction
 public:
-	ReportCtrl();
+    ReportCtrl();
 
-	SwapItems(LVITEM&a,LVITEM&b);
-// Attributes
+    SwapItems(LVITEM & a, LVITEM & b);
+    // Attributes
 public:
-
-// Operations
+    // Operations
 public:
+    // Overrides
+    // ClassWizard generated virtual function overrides
+    //{{AFX_VIRTUAL(ReportCtrl)
+    //}}AFX_VIRTUAL
 
-// Overrides
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(ReportCtrl)
-	//}}AFX_VIRTUAL
-
-// Implementation
+    // Implementation
 public:
+    virtual ~ReportCtrl();
 
-
-	virtual ~ReportCtrl();
-
-	SortItems(int col,int order);
-	// Generated message map functions
+    SortItems(int col, int order);
+    // Generated message map functions
 protected:
-	//{{AFX_MSG(ReportCtrl)
-	afx_msg void OnColumnclick(NMHDR* pNMHDR, LRESULT* pResult);
-	//}}AFX_MSG
+    //{{AFX_MSG(ReportCtrl)
+    afx_msg void OnColumnclick(NMHDR * pNMHDR, LRESULT * pResult);
+    //}}AFX_MSG
 
-	DECLARE_MESSAGE_MAP()
+    DECLARE_MESSAGE_MAP()
 };
 
 /////////////////////////////////////////////////////////////////////////////

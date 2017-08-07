@@ -10,59 +10,54 @@
 /////////////////////////////////////////////////////////////////////////////
 // ParkDat_Class_ImgPreview window
 
-#include<img256_lib.h>
-#include<rct2Lib.h>
-
+#include <img256_lib.h>
+#include <rct2Lib.h>
 
 class ParkDat_Class_ImgPreview : public CStatic
 {
-//data 
+    // data
 public:
-	int i;
+    int i;
 
-	IMG_256*imgs[SV6_OBJDAT_NUMENTRIES_ALL];
+    IMG_256 * imgs[SV6_OBJDAT_NUMENTRIES_ALL];
 
-
-//functions
+    // functions
 public:
-	bool InDrawRange();	
-	DrawPreview();
-	FreeAllImgs();
+    bool InDrawRange();
+    DrawPreview();
+    FreeAllImgs();
 
-// Construction
+    // Construction
 public:
-	ParkDat_Class_ImgPreview();
+    ParkDat_Class_ImgPreview();
 
-// Attributes
+    // Attributes
 public:
-
-
-// Operations
+    // Operations
 public:
+    // Overrides
+    // ClassWizard generated virtual function overrides
+    //{{AFX_VIRTUAL(ParkDat_Class_ImgPreview)
+    //}}AFX_VIRTUAL
 
-// Overrides
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(ParkDat_Class_ImgPreview)
-	//}}AFX_VIRTUAL
-
-// Implementation
+    // Implementation
 public:
-	virtual ~ParkDat_Class_ImgPreview();
+    virtual ~ParkDat_Class_ImgPreview();
 
-	// Generated message map functions
+    // Generated message map functions
 protected:
-	//{{AFX_MSG(ParkDat_Class_ImgPreview)
-	afx_msg void OnActionUpdate();
-	afx_msg int OnMouseActivate(CWnd* pDesktopWnd, UINT nHitTest, UINT message);
-	afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
-	afx_msg void OnClicked();
-	afx_msg void OnPaint();
-	afx_msg void OnClose();
-	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
-	afx_msg void OnDestroy();
-	//}}AFX_MSG
+    //{{AFX_MSG(ParkDat_Class_ImgPreview)
+    afx_msg void OnActionUpdate();
+    afx_msg int OnMouseActivate(CWnd * pDesktopWnd, UINT nHitTest, UINT message);
+    afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
+    afx_msg void OnClicked();
+    afx_msg void OnPaint();
+    afx_msg void OnClose();
+    afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
+    afx_msg void OnDestroy();
+    //}}AFX_MSG
 
-	DECLARE_MESSAGE_MAP()
+    DECLARE_MESSAGE_MAP()
 };
 
 /////////////////////////////////////////////////////////////////////////////

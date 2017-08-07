@@ -7,7 +7,7 @@
 // ReportControl.h : header file
 //
 
-#include<ReportCtrl.h>
+#include <ReportCtrl.h>
 
 /////////////////////////////////////////////////////////////////////////////
 // ReportControl window
@@ -15,39 +15,36 @@
 class ReportControl : public CReportCtrl
 {
 public:
-	int GetIndex(int row);
-	int GetParam(int row);
-	
-// Construction
+    int GetIndex(int row);
+    int GetParam(int row);
+
+    // Construction
 public:
-	ReportControl();
-	SelectItem(int i);
-	int TextSearch(int i,CString s,bool wrap,bool caseIgnore);
-	int TextSearch(int i,char*s,bool wrap,bool caseIgnore);
+    ReportControl();
+    SelectItem(int i);
+    int TextSearch(int i, CString s, bool wrap, bool caseIgnore);
+    int TextSearch(int i, char * s, bool wrap, bool caseIgnore);
 
-// Attributes
+    // Attributes
 public:
-
-// Operations
+    // Operations
 public:
+    // Overrides
+    // ClassWizard generated virtual function overrides
+    //{{AFX_VIRTUAL(ReportControl)
+    //}}AFX_VIRTUAL
 
-// Overrides
-	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(ReportControl)
-	//}}AFX_VIRTUAL
-
-// Implementation
+    // Implementation
 public:
-	virtual ~ReportControl();
+    virtual ~ReportControl();
 
-
-	// Generated message map functions
+    // Generated message map functions
 protected:
-	//{{AFX_MSG(ReportControl)
-	afx_msg void OnColumnclick(NMHDR* pNMHDR, LRESULT* pResult);
-	//}}AFX_MSG
+    //{{AFX_MSG(ReportControl)
+    afx_msg void OnColumnclick(NMHDR * pNMHDR, LRESULT * pResult);
+    //}}AFX_MSG
 
-	DECLARE_MESSAGE_MAP()
+    DECLARE_MESSAGE_MAP()
 };
 
 /////////////////////////////////////////////////////////////////////////////
