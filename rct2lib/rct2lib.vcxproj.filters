@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Include">
+      <UniqueIdentifier>{8f08e00b-e4e8-4108-b0bc-3bb864938afd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="iso.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="objDat_CopyImage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rct2Lib.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="readResource.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="include\stddlg.cpp">
+      <Filter>Include</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="rct2lib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="readResource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\BMPLib.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\BMPLib__Functions.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\codeShortcuts.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\colorfuncs.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\conio2.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CStringOps.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FileIO2.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\img256_lib.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\io2.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mem2.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mem2.hpp">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mem3.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\objdat.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\process.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\prompt.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rct_svx.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rct1Lib.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rct2Lib.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ReportCtrl.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\stddlg.H">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\stdlib2.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\stdMacros.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\STDTYPES.H">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\stdtypes0.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\superString.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\tdbAccess.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\types.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\wprocess.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
